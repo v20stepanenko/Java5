@@ -7,82 +7,46 @@ package goJava.modul2.homeWork1;
 public class ArrayWork {
 
     public static void main(String[] args) {
-
+//        Выделяем память под масивы
         int[] integer = new int[10];
         double[] doubleV = new double[10];
-
-
+        //Заполняем масивы
         for (int i = 0; i < integer.length; i++) {
-
             integer[i] = ((int) (Math.random() * 1000) - 300);
-
         }
         for (int i = 0; i < doubleV.length; i++) {
-
             doubleV[i] = ((Math.random() * 1000) - 300);
-
         }
-        arrMethod(integer);
-        arrDoubleMethod(doubleV);
-    }
+// * sum(int array[]), sum(double[])
+// * min(int array[]), min(double[])
+// * max(int array[]), max(double[])
+// * maxPositive(int array[]), maxPositive(double array[]),
+// * multiplication  (int array[]), multiplication (double[])
+// * modulus(int array[]), modulus(double[])
+// * secondLargest(int array[]), secondLargest(double[])
 
-    public static void arrMethod(int[] ints) {
+        ArrDouble bobl = new ArrDouble();
+        System.out.printf("Dlya double \n sum = %f \n min = %f\n max = %f\n max positive = %s\n multiplication = %f\n modulus = %f\n second largest =%f",
+                bobl.sum(doubleV),
+                bobl.min(doubleV),
+                bobl.max(doubleV),
+                bobl.maxPositive(doubleV),
+                bobl.multiplication(doubleV),
+                bobl.modulus(doubleV),
+                bobl.secondLargest(doubleV));
 
-        int modulus = ints[0] % ints[ints.length - 1];
-        int sum = ints[0];
-        int max = ints[0];
-        int min = ints[0];
-        long multiplication = ints[0];
-        int secondLargest = ints[0];
 
-        for (int i = 1; i < ints.length; i++) {
+        ArrInt integger = new ArrInt();
+        System.out.printf("\n=================================\n Dlya intov  \n sum = %d \n min = %d\n max = %d\n max positive = %s\n multiplication = %d\n modulus = %d\n second largest =%d",
+                integger.sum(integer),
+                integger.min(integer),
+                integger.max(integer),
+                integger.maxPositive(integer),
+                integger.multiplication(integer),
+                integger.modulus(integer),
+                integger.secondLargest(integer));
 
-            multiplication *= ints[i];
-            sum += ints[i];
-            if (secondLargest < ints[i]) {
-                if (max < ints[i]) {
-                    max = ints[i];
-                } else {
-                    secondLargest = ints[i];
-                }
-            }
-            if (min > ints[i]) {
-                min = ints[i];
-            }
-        }
-        System.out.printf("Sum = %d \n Max = %d \n Min = %d \n Multiplication = %d \n Second largest = %d \n Modulus = %d \n", sum, max, min, multiplication, secondLargest, modulus);
-        if (max >= 0) System.out.printf("Max positive = %d\n", max);
 
-    }
-
-    public static void arrDoubleMethod(double[] dobl) {
-
-        double modulus = dobl[0] % dobl[dobl.length - 1];
-        double sum = dobl[0];
-        double max = dobl[0];
-        double min = dobl[0];
-        double multiplication = dobl[0];
-        double secondLargest = dobl[0];
-
-        for (int i = 1; i < dobl.length; i++) {
-
-            multiplication *= dobl[i];
-            sum += dobl[i];
-
-            if (secondLargest < dobl[i]) {
-                if (max < dobl[i]) {
-                    max = dobl[i];
-                } else {
-                    secondLargest = dobl[i];
-                }
-            }
-
-            if (min > dobl[i]) {
-                min = dobl[i];
-            }
-        }
-        System.out.printf("Sum = %f \n Max = %f \n Min = %f \n Multiplication = %f \n Second largest = %f \n Modulus = %f \n", sum, max, min, multiplication, secondLargest, modulus);
-        if (max >= 0) System.out.printf("Max positive = %f", max);
 
     }
 }
