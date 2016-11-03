@@ -1,29 +1,27 @@
-package goJava.modul2.homeWork3;import java.io.BufferedReader;
+package goJava.modul2.homeWork3;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- *
  * int[] balances = {1200, 250, 2000, 500, 3200};
  * String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
  */
 public class Bank {
-    static HashMap<String, Double> spisok = new HashMap<>();
+
     static double withdrawal;
 
     public static void main(String[] args) throws IOException {
 
-        spisok.put("Jane", (double) 1200);
-        spisok.put("Ann", (double) 250);
-        spisok.put("Jack", (double) 2000);
-        spisok.put("Oww", (double) 500);
-        spisok.put("Lane", (double) 3200);
+        double[] balances = {1200, 250, 2000, 500, 3200};
+        String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
+
         System.out.println("Ведите имя на латынице");
-        for (Map.Entry<String, Double> entry : spisok.entrySet()) {
-            System.out.printf("%s - balance %.2f\n", entry.getKey(), entry.getValue());
+        for (int i = 0; i < ownerNames.length; i++) {
+            System.out.printf("%s - balance %.2f\n", ownerNames[i], balances[i]);
         }
 
 
@@ -31,7 +29,18 @@ public class Bank {
         while (true) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
             String name = reader.readLine();
-            if (spisok.containsKey(name)) {
+            boolean ok = false;
+            int index = 0;
+            for (int i = 0; i < ownerNames.length; i++) {
+                if (ownerNames[i].equals(name)) {
+                    ok = true;
+                    index = i;
+                    break;
+                }
+            }
+
+
+            if (ok) {
                 System.out.println("сколько денег снять?");
 
                 pipirka:
@@ -52,12 +61,12 @@ public class Bank {
 
                 double comision = withdrawal * 0.05;
 
-                double balance = spisok.get(name) - withdrawal - comision;
+                double balance = balances[index] - withdrawal - comision;
 
                 if (balance > 0) {
 
-                    spisok.put(name, balance);
-                    System.out.printf("%s withdrawal  =  %.2f, balance  =  %.2f", name, withdrawal, spisok.get(name));
+                    balances[index] = balance;
+                    System.out.printf("%s withdrawal  =  %.2f, balance  =  %.2f", name, withdrawal, balances[index]);
                     break;
 
                 } else System.out.println("No");
@@ -74,9 +83,5 @@ public class Bank {
                 }
             }
         }
-
-
     }
-
-
 }
