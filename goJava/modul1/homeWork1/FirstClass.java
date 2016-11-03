@@ -9,10 +9,9 @@ public class FirstClass {
 
 
         System.out.println("Мой \"первый\" класс на Java");
-        new SecondClass();
-        new ThirdClass();
-        new FourtClass();
-        new FifthClass();
-
+        SecondClass.secondClass();
+        ThirdClass.thirdClass();
+        FourtClass.fourtClass();
+        FifthClass.fifthClass();
     }
 }

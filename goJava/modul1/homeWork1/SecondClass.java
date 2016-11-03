@@ -5,7 +5,7 @@ package goJava.modul1.homeWork1;
  */
 public class SecondClass {
 
-    public SecondClass(){
+    static void secondClass(){
 
         System.out.println("Мой \"второй\" класс на Java");
     }

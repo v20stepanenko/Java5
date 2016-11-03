@@ -5,7 +5,7 @@ package goJava.modul1.homeWork1;
  */
 public class FifthClass {
 
-    public FifthClass(){
+    static void fifthClass(){
 
         System.out.println("Мой \"пятый\" класс на Java");
     }

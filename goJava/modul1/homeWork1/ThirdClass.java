@@ -5,7 +5,7 @@ package goJava.modul1.homeWork1;
  */
 public class ThirdClass {
 
-    public ThirdClass(){
+    static void thirdClass(){
         
         System.out.println("Мой \"третий\" класс на Java");
     }
