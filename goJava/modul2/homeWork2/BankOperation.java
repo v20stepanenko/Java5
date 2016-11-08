@@ -16,6 +16,8 @@ public class BankOperation {
 
     static public boolean isValid(String input) {
 
+        if (input.isEmpty()) return false;
+
         for (char ch : input.toCharArray()) {
 
             if (!Character.isDigit(ch)) {
