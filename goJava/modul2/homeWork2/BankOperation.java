@@ -15,12 +15,14 @@ public class BankOperation {
     static double comision;
 
     static public boolean isValid(String input) {
+        int count = 0;
 
         if (input.isEmpty()) return false;
 
         for (char ch : input.toCharArray()) {
-
-            if (!Character.isDigit(ch)) {
+            if(ch=='.') ++count;
+            if (count>1) return false;
+            if (!Character.isDigit(ch)&& ch!='.') {
                 return false;
             }
         }
@@ -34,10 +36,11 @@ public class BankOperation {
         System.out.println("Задайте баланс, по условию задачи");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        String input;
+
 
 
         while (true) {
+            String input;
             System.out.println("Введите число");
             input = reader.readLine();
             if (isValid(input)) {
@@ -49,6 +52,7 @@ public class BankOperation {
         System.out.println("Сколько денег снять ?");
 
         while (true) {
+            String input;
             System.out.println("Введите число");
             input = reader.readLine();
             if (isValid(input)) {

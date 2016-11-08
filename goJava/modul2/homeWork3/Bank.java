@@ -14,6 +14,19 @@ public class Bank {
 
     static double withdrawal;
 
+    static public boolean isValid(String input) {
+
+        if (input.isEmpty()) return false;
+
+        for (char ch : input.toCharArray()) {
+
+            if (!Character.isDigit(ch)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main(String[] args) throws IOException {
 
         double[] balances = {1200, 250, 2000, 500, 3200};
@@ -43,19 +56,14 @@ public class Bank {
             if (ok) {
                 System.out.println("сколько денег снять?");
 
-                pipirka:
+
                 while (true) {
-                    int i = 0;
-
-                    try {
-                        withdrawal = Double.parseDouble(reader.readLine());
-                    } catch (NumberFormatException e) {
-                        System.out.println("Введите число");
-                        i = 1;
-                        continue pipirka;
-
-                    } finally {
-                        if (i == 0) break;
+                    String input;
+                    System.out.println("Введите число");
+                    input = reader.readLine();
+                    if (isValid(input)) {
+                        withdrawal = Double.parseDouble(input);
+                        break;
                     }
                 }
 
