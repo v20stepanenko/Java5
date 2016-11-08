@@ -30,39 +30,28 @@ public class BankOperation {
     }
 
 
+    static public double returnValue ( ) throws IOException {
+        while (true) {
+            System.out.println("Введите число");
+            String input = new BufferedReader(new InputStreamReader(System.in)).readLine();
+
+            if (isValid(input)) {
+                withdrawal = Double.parseDouble(input);
+                return Double.parseDouble(input);
+            }
+        }
+    }
+
+
     public static void main(String[] args) throws IOException {
 
 
         System.out.println("Задайте баланс, по условию задачи");
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
-
-
-
-        while (true) {
-            String input;
-            System.out.println("Введите число");
-            input = reader.readLine();
-            if (isValid(input)) {
-                balance = Double.parseDouble(input);
-                break;
-            }
-        }
+        balance = returnValue();
 
         System.out.println("Сколько денег снять ?");
-
-        while (true) {
-            String input;
-            System.out.println("Введите число");
-            input = reader.readLine();
-            if (isValid(input)) {
-                withdrawal = Double.parseDouble(input);
-                break;
-            }
-        }
-
+        withdrawal = returnValue();
         withdrawal(withdrawal);
-
     }
 
 
