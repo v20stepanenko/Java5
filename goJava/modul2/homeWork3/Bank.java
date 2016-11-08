@@ -79,6 +79,8 @@ public class Bank {
         int count = 0;
 
         if (input.isEmpty()) return false;
+        if (input.equals(".")) return false;
+
 
         for (char ch : input.toCharArray()) {
             if (ch == '.') ++count;
