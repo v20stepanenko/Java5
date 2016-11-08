@@ -16,10 +16,7 @@ public class BankOperation {
 
     static public boolean isValid(String input) {
         int count = 0;
-
         if (input.isEmpty()||input.equals(".")) return false;
-
-
         for (char ch : input.toCharArray()) {
             if(ch=='.') ++count;
             if (count>1) return false;
