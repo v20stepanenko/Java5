@@ -17,36 +17,36 @@ public class BankOperation {
 
         System.out.println("Задайте баланс, по условию задачи");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        pipirka1:
+        loopValid1:
         while (true) {
-            int i = 0;
+            boolean i = false;
 
             try {
                 balance = Integer.parseInt(reader.readLine());
             } catch (NumberFormatException e) {
                 System.out.println("Введите число");
-                i = 1;
-                continue pipirka1;
+                i = true;
+                continue loopValid1;
 
             } finally {
-                if (i == 0) break;
+                if (i) break;
             }
         }
         System.out.println("Сколько бабла снять ?");
 
-        pipirka:
+        loopValid2:
         while (true) {
-            int i = 0;
+            boolean i = false;
 
             try {
                 withdrawal = Double.parseDouble(reader.readLine());
             } catch (NumberFormatException e) {
                 System.out.println("Введите число");
-                i = 1;
-                continue pipirka;
+                i = true;
+                continue loopValid2;
 
             } finally {
-                if (i == 0) break;
+                if (i) break;
             }
         }
         withdrawal(withdrawal);
