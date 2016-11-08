@@ -36,7 +36,6 @@ public class BankOperation {
             String input = new BufferedReader(new InputStreamReader(System.in)).readLine();
 
             if (isValid(input)) {
-                withdrawal = Double.parseDouble(input);
                 return Double.parseDouble(input);
             }
         }
