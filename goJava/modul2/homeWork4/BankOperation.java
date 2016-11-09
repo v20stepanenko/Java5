@@ -11,72 +11,83 @@ public class BankOperation {
 
     static double withdrawal;
 
+
     public static void main(String[] args) throws IOException {
 
         double[] balances = {1200, 250, 2000, 500, 3200};
         String[] ownerNames = {"Jane", "Ann", "Jack", "Oww", "Lane"};
 
-        System.out.println("Ведите имя на латынице");
         for (int i = 0; i < ownerNames.length; i++) {
             System.out.printf("%s - balance %.2f\n", ownerNames[i], balances[i]);
         }
 
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        egegey:
         while (true) {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Ведите имя на латынице");
             String name = reader.readLine();
-            boolean ok = false;
-            int index = 0;
-            for (int i = 0; i < ownerNames.length; i++) {
-                if (ownerNames[i].equals(name)) {
-                    ok = true;
-                    index = i;
+
+
+            if (validNames(name, ownerNames)) {
+
+                System.out.println("сколько денег положить?");
+                withdrawal = returnValue();
+                int index = indexOwner(name, ownerNames);
+                double balanc = balances[index] + withdrawal ;
+
+                    balances[index] = balanc;
+                    System.out.printf("%s balance  =  %.2f", name, balances[index]);
                     break;
                 }
             }
 
+    }
 
-            if (ok) {
-                System.out.println("сколько денег добавить?");
+    static boolean validNames(String name, String[] ownerNames) {
+        for (int i = 0; i < ownerNames.length; i++) {
+            if (ownerNames[i].equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-                pipirka:
-                while (true) {
-                    int i = 0;
-
-                    try {
-                        withdrawal = Double.parseDouble(reader.readLine());
-                    } catch (NumberFormatException e) {
-                        System.out.println("Введите число");
-                        i = 1;
-                        continue pipirka;
-
-                    } finally {
-                        if (i == 0) break;
-                    }
-                }
-
-                balances[index] += withdrawal;
-                System.out.printf("%s balance %.2f",name, balances[index]);
+    static int indexOwner(String name, String[] ownerNames) {
+        int index = 0;
+        for (int i = 0; i < ownerNames.length; i++) {
+            if (ownerNames[i].equals(name)) {
+                index = i;
                 break;
+            }
+        }
+        return index;
+    }
 
-            } else {
-                System.out.printf("Такого имени нету в даной базе\n \"Y\" или \"y\" для повторного воода\n");
-                if (reader.readLine().toLowerCase().equals("y")) {
+    static public boolean isValid(String input) {
+        int count = 0;
 
-                    System.out.println("Вводите");
-                    continue egegey;
-                } else {
-                    System.out.println("Программа остановлена");
-                    break;
-                }
+        if (input.isEmpty()) return false;
+        if (input.equals(".")) return false;
+
+
+        for (char ch : input.toCharArray()) {
+            if (ch == '.') ++count;
+            if (count > 1) return false;
+            if (!Character.isDigit(ch) && ch != '.') {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    static public double returnValue() throws IOException {
+        while (true) {
+            System.out.println("Введите число");
+            String input = new BufferedReader(new InputStreamReader(System.in)).readLine();
+
+            if (isValid(input)) {
+                return Double.parseDouble(input);
             }
         }
     }
 }
-
-
-
-
-
-
