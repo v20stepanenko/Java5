@@ -46,9 +46,9 @@ public class Course {
     private int hoursDuration;
     private String teacherName;
 
-    Course(String ddAndMAndYyyy, String name) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
-        this.startDate = sdf.parse(ddAndMAndYyyy);
+    Course(Date startDate, String name) throws ParseException {
+
+        this.startDate = startDate;
         this.name = name;
 
     }
