@@ -33,7 +33,7 @@ public class Student {
         return coursesTaken;
     }
 
-    public static void setCoursesTaken(Course[] coursesTaken) {
+    public  void setCoursesTaken(Course[] coursesTaken) {
         this.coursesTaken = coursesTaken;
     }
 
@@ -41,7 +41,7 @@ public class Student {
         return age;
     }
 
-    public static void setAge(int age) {
+    public  void setAge(int age) {
         this.age = age;
     }
 

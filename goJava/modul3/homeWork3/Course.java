@@ -1,5 +1,7 @@
 package goJava.modul3.homeWork3;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -44,9 +46,9 @@ public class Course {
     private int hoursDuration;
     private String teacherName;
 
-    Course(Date startDate, String name) {
-
-        this.startDate = startDate;
+    Course(String ddAndMAndYyyy, String name) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-M-yyyy");
+        this.startDate = sdf.parse(ddAndMAndYyyy);
         this.name = name;
 
     }

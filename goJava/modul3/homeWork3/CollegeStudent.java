@@ -45,8 +45,8 @@ public class CollegeStudent extends Student {
 
     CollegeStudent(String firstName, String lastName, int group, int age, Course[] coursesTaken, String collegeName, int rating, long id) {
         super(firstName, lastName, group);
-        Student.setAge(age);
-        Student.setCoursesTaken(coursesTaken);
+        super.setAge(age);
+        super.setCoursesTaken(coursesTaken);
         this.collegeName = collegeName;
         this.rating = rating;
         this.id = id;
