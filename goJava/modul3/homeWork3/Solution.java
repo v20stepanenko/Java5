@@ -14,12 +14,9 @@ public class Solution {
         Course developerJava = new Course("14-05-2017", "Developer");
         Course gogo = new Course("26-07-2018", "GOgo develop");
         Course goJava = new Course(90, "go Java", "Vasiliy");
-        Course [] coursesTaken = new Course[5];
-        coursesTaken [0] = java5;
-        coursesTaken [1] = androidJava;
-        coursesTaken [2] = developerJava;
-        coursesTaken [3] = gogo;
-        coursesTaken [4] =goJava;
+
+        Course [] coursesTaken = {java5, androidJava, developerJava, gogo, goJava};
+
         Student nameIgor = new Student("Igor","Kolomoyskiy",3);
         Student nameSveta = new Student("Jijeshova", coursesTaken);
         CollegeStudent nameVova = new CollegeStudent("Vova", "Makarevich", 5);
