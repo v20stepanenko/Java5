@@ -1,6 +1,5 @@
 package goJava.modul4.homeWork1;
-
-import java.util.Currency;
+import goJava.modul4.homeWork2.Currency;
 
 /**
  * Created by Vova on 16.11.2016.
@@ -9,22 +8,22 @@ public abstract class Bank {
 
     private long id;
     private String bankCountry;
-    private Currency currency;
+    private Currency currency ;
     private int numberOfEmployees;
     private double avrSalaryOfEmployee;
     private long rating;
     private long totalCapita;
 
 
-    abstract int getLimitOfWithdrawal();
+    public abstract int getLimitOfWithdrawal();
 
-    abstract int getLimitOfFunding();
+    public abstract int getLimitOfFunding();
 
-    abstract int getMonthlyRate();
+    public abstract int getMonthlyRate();
 
-    abstract int getCommission(int summ);
+    public abstract int getCommission(int summ);
 
-    double moneyPaidMonthlyForSalary() {
+    public double moneyPaidMonthlyForSalary() {
 
         return avrSalaryOfEmployee * numberOfEmployees;
     }
