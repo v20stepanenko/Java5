@@ -21,11 +21,11 @@ public class User {
     }
 
     void demonstrationHW3() {
-        Bank bankEU = new EUBank();
+        Bank bankEU = new EUBank(564564, "Germany", Currency.EUR, 137, 1868, 65, 545441516);
         User nameVova = new User();
         nameVova.name = "Vova";
         nameVova.bank = bankEU;
-        nameVova.bank.setCurrency(Currency.EUR);
+        nameVova.bank.setCurrency(Currency.USD);
         System.out.println(nameVova.bank.getLimitOfWithdrawal());
     }
 

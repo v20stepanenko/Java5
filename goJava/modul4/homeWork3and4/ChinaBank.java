@@ -13,6 +13,10 @@ import goJava.modul4.homeWork2.Currency;
  */
 public class ChinaBank extends Bank{
 
+    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital){
+        super( id,  bankCountry,  currency,  numberOfEmployees,  avrSalaryOfEmployee,  rating, totalCapital);
+    }
+
     @Override
     public int getLimitOfWithdrawal() {
         int limit = 100;
