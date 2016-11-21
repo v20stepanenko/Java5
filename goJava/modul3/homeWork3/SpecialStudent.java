@@ -5,22 +5,6 @@ package goJava.modul3.homeWork3;
  */
 public class SpecialStudent extends CollegeStudent {
 
-    public long getSecretKey() {
-        return secretKey;
-    }
-
-    private void setSecretKey(long secretKey) {
-        this.secretKey = secretKey;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    private void setEmail(String email) {
-        this.email = email;
-    }
-
     private long secretKey;
     private String email;
 
@@ -45,5 +29,21 @@ public class SpecialStudent extends CollegeStudent {
         super(firstName, lastName, group, age, coursesTaken, collegeName, rating, id);
         this.secretKey = secretKey;
 
+    }
+
+    public long getSecretKey() {
+        return secretKey;
+    }
+
+    private void setSecretKey(long secretKey) {
+        this.secretKey = secretKey;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    private void setEmail(String email) {
+        this.email = email;
     }
 }

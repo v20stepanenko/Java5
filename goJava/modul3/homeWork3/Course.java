@@ -9,6 +9,26 @@ import java.util.Date;
  */
 public class Course {
 
+    private Date startDate;
+    private String name;
+    private int hoursDuration;
+    private String teacherName;
+
+    Course(Date startDate, String name) throws ParseException {
+
+        this.startDate = startDate;
+        this.name = name;
+
+    }
+
+    Course(int hourseDuration, String name, String teacherName) {
+
+        this.name = name;
+        this.hoursDuration = hourseDuration;
+        this.teacherName = teacherName;
+
+    }
+
     public Date getStartDate() {
         return startDate;
     }
@@ -41,24 +61,5 @@ public class Course {
         this.teacherName = teacherName;
     }
 
-    private Date startDate;
-    private String name;
-    private int hoursDuration;
-    private String teacherName;
-
-    Course(Date startDate, String name) throws ParseException {
-
-        this.startDate = startDate;
-        this.name = name;
-
-    }
-
-    Course(int hourseDuration, String name, String teacherName) {
-
-        this.name = name;
-        this.hoursDuration = hourseDuration;
-        this.teacherName = teacherName;
-
-    }
 
 }

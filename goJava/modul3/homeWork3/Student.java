@@ -5,6 +5,26 @@ package goJava.modul3.homeWork3;
  */
 public class Student {
 
+    private String firstName;
+    private String lastName;
+    private int group;
+    private Course[] coursesTaken;
+    private int age;
+
+    Student(String firstName, String lastName, int group) {
+
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.group = group;
+
+    }
+
+    Student(String lastName, Course[] coursesTaken) {
+
+        this.lastName = lastName;
+        this.coursesTaken = coursesTaken;
+
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -45,24 +65,4 @@ public class Student {
         this.age = age;
     }
 
-    private String firstName;
-    private String lastName;
-    private int group;
-    private Course[] coursesTaken;
-    private int age;
-
-    Student(String firstName, String lastName, int group) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.group = group;
-
-    }
-
-    Student(String lastName, Course[] coursesTaken) {
-
-        this.lastName = lastName;
-        this.coursesTaken = coursesTaken;
-
-    }
 }
