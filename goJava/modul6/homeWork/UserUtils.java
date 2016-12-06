@@ -3,7 +3,8 @@ package goJava.modul6.homeWork;
 /**
  * Created by Vova on 06.12.2016.
  */
-public class UserUtils {User[] uniqueUsers(User[] users){
+public class UserUtils {
+    User[] uniqueUsers(User[] users){
     for (int i = 0; i < users.length-1; i++) {
         for (int j = 1; j < users.length; j++) {
             if (users[i].equals(users[j])) users[j] = null;
