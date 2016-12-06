@@ -3,7 +3,7 @@ package goJava.modul6.homeWork;
 /**
  * Created by Vova on 06.12.2016.
  */
-public class ArraysUtils {
+public final class ArraysUtils {
 
 
 
