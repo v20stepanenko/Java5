@@ -1,32 +1,96 @@
 package goJava.modul4.homeWork3and4;
 
 import goJava.modul4.homeWork1.Bank;
-import goJava.modul4.homeWork2.Currency;
 
 /**
  * Created by Vova on 16.11.2016.
  */
 public class User {
-    public long id;
-    public String name;
-    public double balance;
-    public int monthsOfEmployment;
-    public String companyName;
-    public int salary;
-    public Bank bank;
+    private long id;
+    private String name;
+    private double balance;
+    private int monthsOfEmployment;
+    private String companyName;
+    private int salary;
+    private Bank bank;
+
+    public User(long id, String name, double balance, int monthsOfEmployment, String companyName, int salary, Bank bank) {
+        this.id = id;
+        this.name = name;
+        this.balance = balance;
+        this.monthsOfEmployment = monthsOfEmployment;
+        this.companyName = companyName;
+        this.salary = salary;
+        this.bank = bank;
+    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    public int getMonthsOfEmployment() {
+        return monthsOfEmployment;
+    }
+
+    public void setMonthsOfEmployment(int monthsOfEmployment) {
+        this.monthsOfEmployment = monthsOfEmployment;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+    public Bank getBank() {
+        return bank;
+    }
+
+    public void setBank(Bank bank) {
+        this.bank = bank;
+    }
 
     @Override
-    public String toString() {
-        return super.toString();
+    public String toString(){
+        return "User{" +
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", balance = " + balance +
+                ", monthsOfEmployment = " + monthsOfEmployment +
+                ", companyName = '" + companyName + '\'' +
+                ", salary = " + salary +
+                ", bank = " + bank.getBankCountry()+
+                '}';
     }
-
-    void demonstrationHW3() {
-        Bank bankEU = new EUBank(564564, "Germany", Currency.EUR, 137, 1868, 65, 545441516);
-        User nameVova = new User();
-        nameVova.name = "Vova";
-        nameVova.bank = bankEU;
-        nameVova.bank.setCurrency(Currency.USD);
-        System.out.println(nameVova.bank.getLimitOfWithdrawal());
-    }
-
 }

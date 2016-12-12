@@ -11,52 +11,39 @@ import goJava.modul4.homeWork2.Currency;
  10%, если EUR и до 1000 и 11%, если EUR и больше 1000
  * Created by Vova on 16.11.2016.
  */
-public class ChinaBank extends Bank{
+public class ChinaBank extends Bank {
 
-    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital){
-        super( id,  bankCountry,  currency,  numberOfEmployees,  avrSalaryOfEmployee,  rating, totalCapital);
+    public ChinaBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
+        super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
 
     @Override
     public int getLimitOfWithdrawal() {
-        int limit = 100;
-        if (this.getCurrency() == Currency.EUR) {
-            limit = 150;
-        }
-        return limit;
+        if (this.getCurrency() == Currency.USD) return 100;
+        else return 150;
     }
 
     @Override
     public int getLimitOfFunding() {
-        int limit = 10000;
-        if (this.getCurrency() == Currency.EUR) {
-            limit = 5000;
-        }
-        return limit;
+        if (this.getCurrency() == Currency.EUR) return 5000;
+        else return 10000;
     }
 
     @Override
     public int getMonthlyRate() {
-        int rate = 1;
-        if (this.getCurrency() == Currency.EUR) {
-            rate = 0;
-        }
-        return rate;
-
+        if (this.getCurrency() == Currency.USD) return 1;
+        else return 0;
     }
 
     @Override
-    public int getCommission(int summ) {
-        int commision = 3;
-        if (this.getCurrency() == Currency.USD && summ > 1000) {
-            commision = 5;
+    public int getCommission(int amount) {
+        if (this.getCurrency() == Currency.USD) {
+            if (amount < 1000) return 3;
+            else return 5;
+        } else {
+            if (amount < 1000) return 1;
+            else return 11;
         }
-        if (this.getCurrency() == Currency.EUR) {
-            if (summ <= 1000) {
-                commision = 10;
-            } else commision = 11;
-        }
-        return commision;
-    }
 
+    }
 }
