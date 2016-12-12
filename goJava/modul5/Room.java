@@ -32,7 +32,6 @@ public class Room {
 
         if (price != room.price) return false;
         if (persons != room.persons) return false;
-        if (!hotelName.equals(room.hotelName)) return false;
         if (!cityName.equals(room.cityName)) return false;
 
         return true;
@@ -42,7 +41,6 @@ public class Room {
     public int hashCode() {
         int result = price;
         result = 31 * result + persons;
-        result = 31 * result + hotelName.hashCode();
         result = 31 * result + cityName.hashCode();
         return result;
     }

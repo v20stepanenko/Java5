@@ -13,7 +13,6 @@ public class Solution {
         Date createDate2 = installDate("18-04-2017");
         Date createDate3 = installDate("15-09-2017");
         Date createDate4 = installDate("17-12-2016");
-
         Course java5 = new Course(createDate1, "Java5");
         Course androidJava = new Course(createDate2, "Go IT Android! WOW!");
         Course developerJava = new Course(createDate3, "Developer");
