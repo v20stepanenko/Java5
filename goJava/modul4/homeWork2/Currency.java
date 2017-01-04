@@ -5,5 +5,5 @@ package goJava.modul4.homeWork2;
  */
 public enum Currency {
 
-    USD, EUR
+    USD, EUR , UAH
 }
