@@ -1,7 +1,7 @@
 package goJava.modul7;
 
 
-import goJava.modul4.homeWork2.Currency;
+import goJava.modul4.home_work2.Currency;
 
 /**
  * Created by Admin on 04.01.2017.
@@ -23,6 +23,17 @@ public class Order {
         this.user = user;
     }
 
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
+                '}';
+    }
 
     public long getId() {
         return id;

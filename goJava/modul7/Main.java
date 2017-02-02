@@ -1,6 +1,6 @@
 package goJava.modul7;
 
-import goJava.modul4.homeWork2.Currency;
+import goJava.modul4.home_work2.Currency;
 
 import java.util.ArrayList;
 import java.util.HashSet;
