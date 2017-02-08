@@ -29,7 +29,7 @@ public class FifthTask {
 
     }
 
-    public static void throwException(ModException mod) throws ExceptionA, ExceptionB, ExceptionC {
+    public static void throwException(ModException mod) throws ExceptionA, ExceptionB, ExceptionC {  //ModException it's enum
         switch (mod) {
             case EXCEPTION_A:
                 throw new ExceptionA();
