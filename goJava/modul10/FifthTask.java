@@ -26,7 +26,6 @@ public class FifthTask {
         } catch (ExceptionA | ExceptionB | ExceptionC e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     public static void throwException(ModException mod) throws ExceptionA, ExceptionB, ExceptionC {  //ModException it's enum
