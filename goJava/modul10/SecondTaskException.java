@@ -11,7 +11,7 @@ public class SecondTaskException extends Exception {
         this.text = text;
     }
 
-    public void printString(){
+    public void printString() {
         System.out.println(text);
     }
 }

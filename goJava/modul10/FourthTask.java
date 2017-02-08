@@ -13,11 +13,11 @@ public class FourthTask {
         }
     }
 
-    public void g() throws SecondTaskException {
+    private void g() throws SecondTaskException {
         throw new SecondTaskException("Exception from g method") ;
     }
 
-    public void f() throws ExceptionFromTaskException04 {
+    private void f() throws ExceptionFromTaskException04 {
         try {
             g();
         } catch (SecondTaskException e) {

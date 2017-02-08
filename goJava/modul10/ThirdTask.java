@@ -11,9 +11,22 @@ public class ThirdTask {
 
         try {
             newObject.printSqr();
-        }catch (NullPointerException e){
+        } catch (NullPointerException e) {
             System.out.println(e.getMessage());
             System.out.println("You'd better run for it while I divert their attention. It's null pointer exception");
         }
+    }
+}
+
+class MyNewObject {
+
+    private int i;
+
+    public MyNewObject(int i) {
+        this.i = i;
+    }
+
+    public void printSqr() {
+        System.out.println(i * i);
     }
 }
