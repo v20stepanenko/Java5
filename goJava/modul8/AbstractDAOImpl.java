@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Vova on 18.01.2017.
  */
-public class AbstractDAOImpl<T> implements AbstractDAO<T> {
+public abstract class AbstractDAOImpl<T> implements AbstractDAO<T> {
 
     List<T> list = new ArrayList<>();
 
@@ -36,12 +36,9 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T> {
     }
 
     @Override
-    public void deleteById(long id) {
-        list.remove(id);
-    }
+    public abstract void deleteById(long id);
 
     @Override
-    public T get(long id) {
-        return list.get((int) id);
-    }
+    public abstract T get(long id);
 }
+

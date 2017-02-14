@@ -1,37 +1,36 @@
 package goJava.modul8;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Vova on 18.01.2017.
  */
-public class UserDAO<T> extends  AbstractDAOImpl<T> {
+public class UserDAO extends  AbstractDAOImpl<User> {
 
-    private long id;
-    private String name;
-
-    public UserDAO(long id, String name) {
-        this.id = id;
-        this.name = name;
+    @Override
+    public void save(User user) {
+        super.save(user);
     }
 
     @Override
-    public void save(T o) {
-        super.save(o);
-    }
-
-    @Override
-    public void saveAll(List<T> t) {
-        super.saveAll(t);
+    public void saveAll(List<User> users) {
+        super.saveAll(users);
     }
 
     @Override
     public void deleteById(long id) {
-        list.remove(this.getId());
+       getList().removeIf(user -> user.getId() == id);
     }
 
-    public long getId() {
-        return id;
+    @Override
+    public User get(long id) {
+        for (User user : getList()) {
+            if (user.getId() == id) {
+                return user;
+            }
+        }
+        return null;
     }
 
 }
