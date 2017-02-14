@@ -21,13 +21,13 @@ public class AbstractDAOImpl<T> implements AbstractDAO<T> {
     }
 
     @Override
-    public void deleteAll(List T) {
-        list.removeAll(T);
+    public void deleteAll(List<T> t) {
+        list.removeAll(t);
     }
 
     @Override
-    public void saveAll(List T) {
-        list.addAll(T);
+    public void saveAll(List<T> t) {
+        list.addAll(t);
     }
 
     @Override

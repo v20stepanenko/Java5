@@ -21,8 +21,8 @@ public class UserDAO<T> extends  AbstractDAOImpl<T> {
     }
 
     @Override
-    public void saveAll(List T) {
-        super.saveAll(T);
+    public void saveAll(List<T> t) {
+        super.saveAll(t);
     }
 
     @Override
